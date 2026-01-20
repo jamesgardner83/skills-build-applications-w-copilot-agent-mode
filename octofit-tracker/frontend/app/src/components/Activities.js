@@ -22,18 +22,20 @@ const Activities = () => {
             <thead className="table-dark">
               <tr>
                 <th>#</th>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Type</th>
+                <th>User</th>
+                <th>Activity Type</th>
+                <th>Duration (min)</th>
+                <th>Date</th>
               </tr>
             </thead>
             <tbody>
               {activities.map((activity, idx) => (
                 <tr key={activity.id || idx}>
                   <td>{activity.id || idx + 1}</td>
-                  <td>{activity.name || '-'}</td>
-                  <td>{activity.description || '-'}</td>
-                  <td>{activity.type || '-'}</td>
+                  <td>{activity.user?.name || '-'}</td>
+                  <td>{activity.activity_type || '-'}</td>
+                  <td>{activity.duration || '-'}</td>
+                  <td>{activity.date || '-'}</td>
                 </tr>
               ))}
             </tbody>

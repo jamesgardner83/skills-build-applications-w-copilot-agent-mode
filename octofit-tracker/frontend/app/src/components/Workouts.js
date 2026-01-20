@@ -34,8 +34,7 @@ const Workouts = () => {
                   <td>{workout.id || idx + 1}</td>
                   <td>{workout.name || '-'}</td>
                   <td>{workout.description || '-'}</td>
-                  <td>{workout.type || '-'}</td>
-                  <td>{workout.duration || '-'}</td>
+                  <td>{workout.suggested_for?.map(team => team.name).join(', ') || '-'}</td>
                 </tr>
               ))}
             </tbody>

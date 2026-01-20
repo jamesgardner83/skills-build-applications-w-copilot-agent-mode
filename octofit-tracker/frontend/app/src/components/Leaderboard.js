@@ -31,9 +31,8 @@ const Leaderboard = () => {
               {leaders.map((leader, idx) => (
                 <tr key={leader.id || idx}>
                   <td>{leader.id || idx + 1}</td>
-                  <td>{leader.name || '-'}</td>
-                  <td>{leader.score || '-'}</td>
-                  <td>{leader.team || '-'}</td>
+                  <td>{leader.team?.name || '-'}</td>
+                  <td>{leader.total_points || '-'}</td>
                 </tr>
               ))}
             </tbody>

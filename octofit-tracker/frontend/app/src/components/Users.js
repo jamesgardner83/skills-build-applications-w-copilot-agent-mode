@@ -31,9 +31,9 @@ const Users = () => {
               {users.map((user, idx) => (
                 <tr key={user.id || idx}>
                   <td>{user.id || idx + 1}</td>
-                  <td>{user.username || '-'}</td>
+                  <td>{user.name || '-'}</td>
                   <td>{user.email || '-'}</td>
-                  <td>{user.team || '-'}</td>
+                  <td>{user.team?.name || '-'}</td>
                 </tr>
               ))}
             </tbody>
