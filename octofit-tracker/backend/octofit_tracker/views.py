@@ -5,6 +5,8 @@ from rest_framework.reverse import reverse
 from .models import User, Team, Activity, Workout, Leaderboard
 from .serializers import UserSerializer, TeamSerializer, ActivitySerializer, WorkoutSerializer, LeaderboardSerializer
 
+from django.http import HttpResponse
+
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
@@ -34,3 +36,8 @@ def api_root(request, format=None):
         'workouts': reverse('workout-list', request=request, format=format),
         'leaderboards': reverse('leaderboard-list', request=request, format=format),
     })
+
+
+# Simple homepage view for root URL
+def homepage(request):
+    return HttpResponse("<h1>Welcome to Octofit Tracker Backend</h1><p>Visit <a href='/api/'>/api/</a> for API endpoints.</p>")

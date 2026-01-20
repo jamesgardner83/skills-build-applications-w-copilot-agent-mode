@@ -34,6 +34,7 @@ def get_codespace_api_url():
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.homepage, name='homepage'),
     path('api/', views.api_root, name='api-root'),
     path('api/', include(router.urls)),
 ]
