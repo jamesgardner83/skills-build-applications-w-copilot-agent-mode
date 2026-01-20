@@ -20,9 +20,13 @@ from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from . import views
 
+
 router = DefaultRouter()
-# Example: router.register(r'users', views.UserViewSet)
-# Register your viewsets here as needed
+router.register(r'users', views.UserViewSet, basename='user')
+router.register(r'teams', views.TeamViewSet, basename='team')
+router.register(r'activities', views.ActivityViewSet, basename='activity')
+router.register(r'workouts', views.WorkoutViewSet, basename='workout')
+router.register(r'leaderboards', views.LeaderboardViewSet, basename='leaderboard')
 
 
 # Helper to get codespace URL for API docs or responses
